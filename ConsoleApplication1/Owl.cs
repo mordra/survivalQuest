@@ -1,3 +1,4 @@
+using ConsoleApplication1.enums;
 using ConsoleApplication1.interfaces;
 
 namespace ConsoleApplication1
@@ -7,11 +8,23 @@ namespace ConsoleApplication1
         public Owl(string name)
         {
             Name = name;
+            AnimalType = AnimalType.Owl;
+
         }
 
         public override bool IsNocturnal()
         {
             return true;
+        }
+
+        public override AnimalSize GetSize()
+        {
+            return AnimalSize.Small;
+        }
+
+        public override ShelterType OptimalShelter()
+        {
+            return ShelterType.Tree;
         }
     }
 }

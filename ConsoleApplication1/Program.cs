@@ -14,16 +14,15 @@ namespace ConsoleApplication1
 
             foreach (var animal in animals)
             {
-                Console.WriteLine(animal.IsNocturnal() ? "Hi {0}, you are nocturnal!" : "Hi {0}, you like the daylight!",
-                    animal.Name);
-            }
-
+                Console.WriteLine(animal.GetTextSummary());
+            } 
+/*
             var nocturnals = animals.Where(x => x.IsNocturnal()).ToList();
             foreach (var nocturnal in nocturnals)
             {
                 Console.WriteLine("I'm nocturnal: {0}", nocturnal.Name);
             }
-
+*/
             Console.ReadLine();
         }
     }

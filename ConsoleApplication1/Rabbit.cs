@@ -1,3 +1,4 @@
+using ConsoleApplication1.enums;
 using ConsoleApplication1.interfaces;
 
 namespace ConsoleApplication1
@@ -7,6 +8,18 @@ namespace ConsoleApplication1
         public Rabbit(string name)
         {
             Name = name;
+            AnimalType = AnimalType.Rabbit;
+
+        }
+
+        public override AnimalSize GetSize()
+        {
+            return AnimalSize.Small;
+        }
+
+        public override ShelterType OptimalShelter()
+        {
+            return ShelterType.Burrow;
         }
     }
 }

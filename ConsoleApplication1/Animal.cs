@@ -6,6 +6,7 @@ namespace ConsoleApplication1
     public class Animal : IAnimal
     {
         public string Name;
+        public AnimalType AnimalType;
 
         public struct DynamicStat
         {
@@ -16,15 +17,26 @@ namespace ConsoleApplication1
             public int Harm;        // increases if physically hurt or wounded - value decreases with time
         }
 
-        public struct CoreStat
-        {
-            public AnimalSize Size;         // impacts strength and metabolic rate
-            public ShelterType Shelter;     // preferred type of shelter for optimal rest
-        }
-
         public virtual bool IsNocturnal()
         {
             return false;
+        }
+
+        public virtual AnimalSize GetSize()
+        {
+            return AnimalSize.Medium;
+        }
+
+        public virtual ShelterType OptimalShelter()
+        {
+            return ShelterType.None;
+        }
+
+        public string GetTextSummary()
+        {
+            return "Hi! I am " + Name + " the " + AnimalType + ".\n" +
+                    "My preferred shelter is " + OptimalShelter() + " and my size is " + GetSize() + ".\n" +
+                    (IsNocturnal() ? "I prefer the night!\n" : "I'm afraid of the dark!\n");
         }
     }
 }
