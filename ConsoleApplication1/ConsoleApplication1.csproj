@@ -52,27 +52,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Animal.cs" />
-    <Compile Include="AnimalType.cs" />
+    <Compile Include="enums\AnimalSize.cs" />
+    <Compile Include="enums\AnimalType.cs" />
     <Compile Include="Chicken.cs" />
-    <Compile Include="IAnimal.cs" />
-    <Compile Include="IBird.cs" />
-    <Compile Include="IDayAnimal.cs" />
-    <Compile Include="IMammal.cs" />
-    <Compile Include="INightAnimal.cs" />
-    <Compile Include="IReptile.cs" />
+    <Compile Include="interfaces\IAnimal.cs" />
+    <Compile Include="interfaces\IBird.cs" />
+    <Compile Include="interfaces\IDayAnimal.cs" />
+    <Compile Include="interfaces\IMammal.cs" />
+    <Compile Include="interfaces\INightAnimal.cs" />
+    <Compile Include="interfaces\IReptile.cs" />
     <Compile Include="Owl.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rabbit.cs" />
+    <Compile Include="enums\ShelterType.cs" />
     <Compile Include="Snake.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="enums\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

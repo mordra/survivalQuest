@@ -10,11 +10,11 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            var animals = new List<Animal> {new Owl("Happy"), new Owl("Sad"), new Owl("Grumpy"), new Chicken("BukBuk")};
+            var animals = new List<Animal> {new Rabbit("Happy"), new Snake("Sad"), new Owl("Grumpy"), new Chicken("BukBuk")};
 
             foreach (var animal in animals)
             {
-                Console.WriteLine(animal.IsNocturnal() ? "Hi {0}, I am nocturnal!" : "Hi {0}, I like the daylight!",
+                Console.WriteLine(animal.IsNocturnal() ? "Hi {0}, you are nocturnal!" : "Hi {0}, you like the daylight!",
                     animal.Name);
             }
 

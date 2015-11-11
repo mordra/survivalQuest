@@ -1,3 +1,5 @@
+using ConsoleApplication1.interfaces;
+
 namespace ConsoleApplication1
 {
     class Owl : Animal, IBird 
