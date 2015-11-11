@@ -1,3 +1,4 @@
+using System.ComponentModel.Design;
 using ConsoleApplication1.enums;
 using ConsoleApplication1.interfaces;
 
@@ -6,16 +7,14 @@ namespace ConsoleApplication1
     public class Animal : IAnimal
     {
         public string Name;
-        public AnimalType AnimalType;
+        public AnimalType Type;
 
-        public struct DynamicStat
-        {
-            // each is a percentage value; reaching 100 in any results in death
-            public int Hunger;      // increases with time - eating food reduces this value
-            public int Thirst;      // increases with time - drinking water reduces this value
-            public int Fatigue;     // increases with time - sleep or rest reduces this value
-            public int Harm;        // increases if physically hurt or wounded - value decreases with time
-        }
+        // each is a percentage value; reaching 100 in any results in death
+        public int Hunger = 0;      // increases with time - eating food reduces this value
+        public int Thirst = 0;      // increases with time - drinking water reduces this value
+        public int Fatigue = 0;     // increases with time - sleep or rest reduces this value
+        public int Harm = 0;        // increases if physically hurt or wounded - value decreases with time
+
 
         public virtual bool IsNocturnal()
         {
@@ -34,9 +33,9 @@ namespace ConsoleApplication1
 
         public string GetTextSummary()
         {
-            return "Hi! I am " + Name + " the " + AnimalType + ".\n" +
-                    "My preferred shelter is " + OptimalShelter() + " and my size is " + GetSize() + ".\n" +
-                    (IsNocturnal() ? "I prefer the night!\n" : "I'm afraid of the dark!\n");
+            return "Name: " + Name + ", Type: " + Type + ", Home: " + OptimalShelter() + ", Size " + GetSize() +
+                    ", Lifestyle: " + (IsNocturnal() ? "Nocturnal" : "Diurnal") + "\n" +
+                    "Hunger: " + Hunger + ", Thirst: " + Thirst + ", Fatigue: " + Fatigue + ", Harm: " + Harm + "\n";
         }
     }
 }

@@ -8,7 +8,8 @@ namespace ConsoleApplication1
         public Snake(string name)
         {
             Name = name;
-            AnimalType = AnimalType.Snake;
+            Type = AnimalType.Snake;
+
         }
 
         public override bool IsNocturnal()

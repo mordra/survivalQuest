@@ -8,7 +8,7 @@ namespace ConsoleApplication1
         public Owl(string name)
         {
             Name = name;
-            AnimalType = AnimalType.Owl;
+            Type = AnimalType.Owl;
 
         }
 
