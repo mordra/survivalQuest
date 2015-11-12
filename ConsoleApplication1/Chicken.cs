@@ -5,12 +5,10 @@ namespace ConsoleApplication1
 {
     class Chicken : Animal, IMammal
     {
-        public Chicken(string name)
-        {
-            Name = name;
-            Type = AnimalType.Chicken;
+        public Chicken(string name) : base(name) { }
 
-        }
+
+        public override AnimalType Type => AnimalType.Chicken;
 
         public override AnimalSize GetSize()
         {

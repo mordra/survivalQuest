@@ -5,12 +5,9 @@ namespace ConsoleApplication1
 {
     class Owl : Animal, IBird 
     {
-        public Owl(string name)
-        {
-            Name = name;
-            Type = AnimalType.Owl;
+        public Owl(string name) : base(name) { }
 
-        }
+        public override AnimalType Type => AnimalType.Owl;
 
         public override bool IsNocturnal()
         {

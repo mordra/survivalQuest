@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ConsoleApplication1.enums;
 
 namespace ConsoleApplication1
 {
@@ -10,21 +11,12 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            var animals = new List<Animal> {new Rabbit("Happy"), new Snake("Sad"), new Owl("Grumpy"), new Chicken("BukBuk")};
+            
+            var world = new World();
+            world.Populate();
+            world.Run();
 
-            foreach (var animal in animals)
-            {
-                Console.WriteLine(animal.GetTextSummary());
-            } 
-/*
-            var nocturnals = animals.Where(x => x.IsNocturnal()).ToList();
-            foreach (var nocturnal in nocturnals)
-            {
-                Console.WriteLine("I'm nocturnal: {0}", nocturnal.Name);
-            }
-*/
             Console.ReadLine();
         }
     }
-
 }

@@ -5,12 +5,9 @@ namespace ConsoleApplication1
 {
     class Snake : Animal, IReptile
     {
-        public Snake(string name)
-        {
-            Name = name;
-            Type = AnimalType.Snake;
+        public Snake(string name) : base(name) { }
 
-        }
+        public override AnimalType Type => AnimalType.Snake;
 
         public override bool IsNocturnal()
         {

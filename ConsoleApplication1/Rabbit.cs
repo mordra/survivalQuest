@@ -5,12 +5,9 @@ namespace ConsoleApplication1
 {
     class Rabbit : Animal, IMammal
     {
-        public Rabbit(string name)
-        {
-            Name = name;
-            Type = AnimalType.Rabbit;
+        public Rabbit(string name) : base(name) {}
 
-        }
+        public override AnimalType Type => AnimalType.Rabbit;
 
         public override AnimalSize GetSize()
         {
