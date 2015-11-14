@@ -14,16 +14,25 @@ namespace ConsoleApplication1
 
         public void Run()
         {
-            while (!Console.KeyAvailable)
+            Console.WriteLine("Press ESC to stop");
+            do
             {
-                foreach (var animal in _animals)
+                while (!Console.KeyAvailable)
                 {
-                    animal.DoAction();
-                }
-                // each animal will take an action - turn based
-                // increase fatigue, hunger and thirst for each animal based on the action
+                    // each animal will take an action - turn based
+                    // output action and outcome for each animal
 
-            }
+                    foreach (var animal in _animals)
+                    {
+                        animal.DoAction();
+                        Console.WriteLine(animal);
+                    }
+                }
+            } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
+
+            Console.WriteLine("Out of the infinite loop now. Press <any> key to exit.");
+            Console.ReadLine();
+
         }
     }
 }

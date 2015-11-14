@@ -49,6 +49,9 @@ namespace ConsoleApplication1
 
         public void DoAction()
         {
+            // increase hunger, thirst and fatigue due to passage of time 
+            DepleteEnergy(2,2,1);
+
             switch (Dice.D(4))
             {
                 case 1:     // look for shelter
@@ -71,7 +74,7 @@ namespace ConsoleApplication1
 
         public virtual void Rest()
         {
-            Fatigue = IsSheltered ? Math.Max(0, Fatigue - 10) : Math.Max(0, Fatigue - 5);
+            Fatigue = IsSheltered ? Math.Max(0, Fatigue - 15) : Math.Max(0, Fatigue - 5);
         }
 
         public virtual void FindFood()
@@ -79,26 +82,45 @@ namespace ConsoleApplication1
             // 40% chance to find food
             if (Dice.D(10) < 4) 
             {
-                Hunger = Math.Max(0, Hunger - 10);
+                Hunger = Math.Max(0, Hunger - 15);
             }
-            // fail to find food - get hungry
-            else
-            {
-                Hunger += 3;
-            }
-
-            Fatigue += 3;
-            Thirst += 3;
         }
 
         public virtual void FindWater()
         {
-            throw new NotImplementedException();
+            // 10% chance to find lots of water, 60% to find small amount
+            int rand = Dice.D(10);
+            if (rand == 1)
+            {
+                Thirst = 0;         // fully quenched
+            }
+            else if (rand < 8)
+            {
+                Thirst = Math.Max(0, Thirst - 15);
+            }
+
         }
 
         public virtual void FindShelter()
         {
-            throw new NotImplementedException();
+            // If animal already has shelter, simply return to it and rest
+            if (IsSheltered == true)
+            {
+                Rest();
+                return;
+            }
+            // 10% chance to find optimal shelter
+            if (Dice.D(10) == 1)
+            {
+                IsSheltered = true;
+            }
+        }
+
+        public virtual void DepleteEnergy(int hunger, int thirst, int fatigue)
+        {
+            Hunger = Math.Min(100, Hunger + hunger);
+            Thirst = Math.Min(100, Thirst + thirst);
+            Fatigue = Math.Min(100, Fatigue + fatigue);
         }
 
     }
