@@ -50,7 +50,7 @@ namespace ConsoleApplication1
         public void DoAction()
         {
             // increase hunger, thirst and fatigue due to passage of time 
-            DepleteEnergy(2,2,1);
+            DepleteEnergy(2,2,3);
 
             switch (Dice.D(4))
             {
@@ -74,7 +74,7 @@ namespace ConsoleApplication1
 
         public virtual void Rest()
         {
-            Fatigue = IsSheltered ? Math.Max(0, Fatigue - 15) : Math.Max(0, Fatigue - 5);
+            Fatigue = IsSheltered ? Math.Max(0, Fatigue - 20) : Math.Max(0, Fatigue - 8);
         }
 
         public virtual void FindFood()

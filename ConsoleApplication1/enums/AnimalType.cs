@@ -11,7 +11,9 @@
         Monkey,
         Snake,
         Hawk,
-        Owl
+        Owl,
+        Frog,
+        Camel
     }
 
 }

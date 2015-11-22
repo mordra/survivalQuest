@@ -1,7 +1,6 @@
 namespace ConsoleApplication1.interfaces
 {
-    internal interface IReptile
+    internal interface IAmphibian
     {
     }
-
 }

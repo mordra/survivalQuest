@@ -44,16 +44,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Animal.cs" />
+    <Compile Include="Bear.cs" />
+    <Compile Include="Buffalo.cs" />
+    <Compile Include="Camel.cs" />
     <Compile Include="Dice.cs" />
     <Compile Include="enums\AnimalSize.cs" />
     <Compile Include="enums\AnimalType.cs" />
     <Compile Include="Chicken.cs" />
+    <Compile Include="Frog.cs" />
+    <Compile Include="Giraffe.cs" />
+    <Compile Include="Hawk.cs" />
+    <Compile Include="interfaces\IAmphibian.cs" />
     <Compile Include="interfaces\IAnimal.cs" />
     <Compile Include="interfaces\IBird.cs" />
     <Compile Include="interfaces\IDayAnimal.cs" />
     <Compile Include="interfaces\IMammal.cs" />
     <Compile Include="interfaces\INightAnimal.cs" />
     <Compile Include="interfaces\IReptile.cs" />
+    <Compile Include="Koala.cs" />
+    <Compile Include="Monkey.cs" />
     <Compile Include="Owl.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
