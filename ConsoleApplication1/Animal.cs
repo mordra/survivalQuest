@@ -1,6 +1,4 @@
 using System;
-using System.ComponentModel.Design;
-using System.Xml;
 using ConsoleApplication1.enums;
 using ConsoleApplication1.interfaces;
 
@@ -12,10 +10,10 @@ namespace ConsoleApplication1
         public bool IsSheltered { get; set; }
 
         // each is a percentage value; reaching 100 in any results in death
-        public int Hunger = 0,      // increases with time - eating food reduces this value
-                   Thirst = 0,      // increases with time - drinking water reduces this value
-                   Fatigue = 0,     // increases with time - sleep or rest reduces this value
-                   Harm = 0;        // increases if physically hurt or wounded - value decreases with time
+        public int Hunger,      // increases with time - eating food reduces this value
+                   Thirst,      // increases with time - drinking water reduces this value
+                   Fatigue,     // increases with time - sleep or rest reduces this value
+                   Harm = 0;    // increases if physically hurt or wounded - value decreases with time
 
         public abstract AnimalType Type { get; }
 
@@ -104,7 +102,7 @@ namespace ConsoleApplication1
         public virtual void FindShelter()
         {
             // If animal already has shelter, simply return to it and rest
-            if (IsSheltered == true)
+            if (IsSheltered)
             {
                 Rest();
                 return;
